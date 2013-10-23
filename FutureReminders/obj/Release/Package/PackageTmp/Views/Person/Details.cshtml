@@ -1,0 +1,29 @@
+﻿@model FutureReminders.Models.PersonModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PersonModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TextToName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TextToName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TextToNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TextToNumber)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
