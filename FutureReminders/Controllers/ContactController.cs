@@ -9,33 +9,33 @@ using FutureReminders.Models;
 
 namespace FutureReminders.Controllers
 {
-    public class PersonController : Controller
+    public class ContactController : Controller
     {
         private FutureRemindersDb db = new FutureRemindersDb();
 
         //
-        // GET: /Person/
+        // GET: /Contact/
 
         public ActionResult Index()
         {
-            return View(db.PersonList.ToList());
+            return View(db.ContactsList.ToList());
         }
 
         //
-        // GET: /Person/Details/5
+        // GET: /Contact/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Person person = db.PersonList.Find(id);
-            if (person == null)
+            Contact contact = db.ContactsList.Find(id);
+            if (contact == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(contact);
         }
 
         //
-        // GET: /Person/Create
+        // GET: /Contact/Create
 
         public ActionResult Create()
         {
@@ -43,73 +43,73 @@ namespace FutureReminders.Controllers
         }
 
         //
-        // POST: /Person/Create
+        // POST: /Contact/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Person person)
+        public ActionResult Create(Contact contact)
         {
             if (ModelState.IsValid)
             {
-                db.PersonList.Add(person);
+                db.ContactsList.Add(contact);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(person);
+            return View(contact);
         }
 
         //
-        // GET: /Person/Edit/5
+        // GET: /Contact/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Person person = db.PersonList.Find(id);
-            if (person == null)
+            Contact contact = db.ContactsList.Find(id);
+            if (contact == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(contact);
         }
 
         //
-        // POST: /Person/Edit/5
+        // POST: /Contact/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Person person)
+        public ActionResult Edit(Contact contact)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(person).State = EntityState.Modified;
+                db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(person);
+            return View(contact);
         }
 
         //
-        // GET: /Person/Delete/5
+        // GET: /Contact/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Person person = db.PersonList.Find(id);
-            if (person == null)
+            Contact contact = db.ContactsList.Find(id);
+            if (contact == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(contact);
         }
 
         //
-        // POST: /Person/Delete/5
+        // POST: /Contact/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Person person = db.PersonList.Find(id);
-            db.PersonList.Remove(person);
+            Contact contact = db.ContactsList.Find(id);
+            db.ContactsList.Remove(contact);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

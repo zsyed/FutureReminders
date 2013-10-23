@@ -1,19 +1,17 @@
-﻿@model FutureReminders.Models.Person
+﻿@model FutureReminders.Models.Contact
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Person</legend>
-
-        @Html.HiddenFor(model => model.Id)
+        <legend>Contact</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.TextToName)
@@ -24,15 +22,15 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TextToNumber)
+            @Html.LabelFor(model => model.PhoneNumber)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TextToNumber)
-            @Html.ValidationMessageFor(model => model.TextToNumber)
+            @Html.EditorFor(model => model.PhoneNumber)
+            @Html.ValidationMessageFor(model => model.PhoneNumber)
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }

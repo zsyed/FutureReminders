@@ -84,3 +84,4 @@ C:\projects\MyGitProject\FutureReminders\FutureReminders\FutureReminders\obj\Deb
 C:\projects\MyGitProject\FutureReminders\FutureReminders\FutureReminders\obj\Debug\FutureReminders.pdb
 C:\projects\MyGitProject\FutureReminders\FutureReminders\FutureReminders\bin\Elmah.dll
 C:\projects\MyGitProject\FutureReminders\FutureReminders\FutureReminders\bin\Elmah.Mvc.dll
+C:\projects\MyGitProject\FutureReminders\FutureReminders\FutureReminders\obj\Debug\FutureReminders.csprojResolveAssemblyReference.cache

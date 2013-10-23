@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FutureReminders.Models
 {
-    public class Person
+    public class Contact
     {
 
         public int Id { get; set; }
@@ -18,8 +18,8 @@ namespace FutureReminders.Models
         [Display(Name = "Name")]
         public string TextToName { get; set; }
 
-        [Display(Name = "Cell Number")]
-        public string TextToNumber { get; set; }
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model FutureReminders.Models.Person
+﻿@model FutureReminders.Models.Contact
 
 @{
     ViewBag.Title = "Delete";
@@ -8,7 +8,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>Person</legend>
+    <legend>Contact</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.TextToName)
@@ -18,10 +18,10 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TextToNumber)
+         @Html.DisplayNameFor(model => model.PhoneNumber)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.TextToNumber)
+        @Html.DisplayFor(model => model.PhoneNumber)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {

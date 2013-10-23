@@ -12,6 +12,6 @@ namespace FutureReminders.Models
             : base("DefaultConnection")
         {
         }
-        public DbSet<Person> PersonList { get; set; }
+        public DbSet<Contact> ContactsList { get; set; }
     }
 }
