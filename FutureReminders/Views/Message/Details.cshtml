@@ -1,0 +1,43 @@
+﻿@model FutureReminders.Models.MessageModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MessageModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MessageSend)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MessageSend)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Frequency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Frequency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Day)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Day)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

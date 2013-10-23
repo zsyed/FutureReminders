@@ -5,7 +5,7 @@ namespace FutureReminders.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<FutureReminders.Models.PersonsContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<FutureReminders.Models.FutureRemindersDb>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace FutureReminders.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(FutureReminders.Models.PersonsContext context)
+        protected override void Seed(FutureReminders.Models.FutureRemindersDb context)
         {
             //  This method will be called after migrating to the latest version.
 

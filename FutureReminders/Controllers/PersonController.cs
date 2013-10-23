@@ -11,7 +11,7 @@ namespace FutureReminders.Controllers
 {
     public class PersonController : Controller
     {
-        private PersonsContext db = new PersonsContext();
+        private FutureRemindersDb db = new FutureRemindersDb();
 
         //
         // GET: /Person/
@@ -26,12 +26,12 @@ namespace FutureReminders.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            PersonModels personmodels = db.PersonList.Find(id);
-            if (personmodels == null)
+            Person person = db.PersonList.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(personmodels);
+            return View(person);
         }
 
         //
@@ -47,16 +47,16 @@ namespace FutureReminders.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PersonModels personmodels)
+        public ActionResult Create(Person person)
         {
             if (ModelState.IsValid)
             {
-                db.PersonList.Add(personmodels);
+                db.PersonList.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(personmodels);
+            return View(person);
         }
 
         //
@@ -64,12 +64,12 @@ namespace FutureReminders.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            PersonModels personmodels = db.PersonList.Find(id);
-            if (personmodels == null)
+            Person person = db.PersonList.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(personmodels);
+            return View(person);
         }
 
         //
@@ -77,15 +77,15 @@ namespace FutureReminders.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(PersonModels personmodels)
+        public ActionResult Edit(Person person)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(personmodels).State = EntityState.Modified;
+                db.Entry(person).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(personmodels);
+            return View(person);
         }
 
         //
@@ -93,12 +93,12 @@ namespace FutureReminders.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            PersonModels personmodels = db.PersonList.Find(id);
-            if (personmodels == null)
+            Person person = db.PersonList.Find(id);
+            if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(personmodels);
+            return View(person);
         }
 
         //
@@ -108,8 +108,8 @@ namespace FutureReminders.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PersonModels personmodels = db.PersonList.Find(id);
-            db.PersonList.Remove(personmodels);
+            Person person = db.PersonList.Find(id);
+            db.PersonList.Remove(person);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

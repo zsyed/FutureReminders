@@ -7,19 +7,7 @@ using System.Web;
 
 namespace FutureReminders.Models
 {
-
-    public class PersonsContext : DbContext
-    {
-        public PersonsContext()
-            : base("DefaultConnection")
-        {
-        }
-
-        public DbSet<PersonModels> PersonList { get; set; }
-    }
-
-    
-    public class PersonModels
+    public class Person
     {
 
         public int Id { get; set; }
@@ -32,5 +20,6 @@ namespace FutureReminders.Models
 
         [Display(Name = "Cell Number")]
         public string TextToNumber { get; set; }
+
     }
 }
